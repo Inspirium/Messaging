@@ -15,11 +15,12 @@ class ThreadController extends Controller {
 	public function postMessage(Request $request, $id) {
 		$thread = Thread::find($id);
 		if ($thread) {
-			$thread->messages->create(
+			$thread->messages()->create(
 				['message' => $request->input('message'), 'sender_id' => \Auth::id()]
 			);
-
+			$thread->load('messages');
 			return response()->json($thread);
 		}
+		return false;
 	}
 }
