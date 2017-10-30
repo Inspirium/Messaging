@@ -39,6 +39,8 @@ class Message extends Model {
 
 	protected $fillable = ['message', 'sender_id', 'thread_id'];
 
+	protected $with = ['sender'];
+
 	public function sender() {
 		return $this->belongsTo('Inspirium\HumanResources\Models\Employee', 'sender_id');
 	}
