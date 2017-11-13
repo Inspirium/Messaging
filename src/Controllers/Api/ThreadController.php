@@ -19,7 +19,7 @@ class ThreadController extends Controller {
 				['message' => $request->input('message'), 'sender_id' => \Auth::id()]
 			);
 			$thread->load('messages');
-			return response()->json($thread);
+			return response()->json($thread->messages);
 		}
 		return false;
 	}

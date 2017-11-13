@@ -39,7 +39,7 @@ class Thread extends Model {
 
 	protected $table = 'threads';
 
-	protected $with = ['messages', 'connection'];
+	protected $with = ['messages'];
 
 	protected $fillable = ['title'];
 
@@ -52,6 +52,6 @@ class Thread extends Model {
 	}
 
 	public function users() {
-		return $this->belongsToMany('Inspirium\HumanResources\Models\Employee', 'threads_employees');
+		return $this->belongsToMany('Inspirium\HumanResources\Models\Employee', 'threads_employees', 'thread_id', 'employee_id');
 	}
 }
