@@ -1,7 +1,7 @@
 <?php
 namespace Inspirium\Messaging\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use Inspirium\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inspirium\Messaging\Models\Message;
 use Inspirium\Messaging\Models\Thread;

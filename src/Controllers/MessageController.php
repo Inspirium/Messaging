@@ -2,7 +2,7 @@
 
 namespace Inspirium\Messaging\Controllers;
 
-use App\Http\Controllers\Controller;
+use Inspirium\Http\Controllers\Controller;
 
 class MessageController extends Controller {
 
