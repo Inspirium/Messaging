@@ -12,10 +12,10 @@ class ThreadObserver {
 		dd('assigned');
 		foreach($thread->users as $employee) {
 			if ($thread->connection_type === 'Inspirium\TaskManagement\Models\Task') {
-				$employee->user->notify(new TaskAssigned($thread->connection));
+				$employee->notify(new TaskAssigned($thread->connection));
 			}
 			else {
-				$employee->user->notify(new NewThread($thread));
+				$employee->notify(new NewThread($thread));
 			}
 		}
 	}

@@ -52,7 +52,7 @@ class Thread extends Model {
 	}
 
 	public function users() {
-		return $this->belongsToMany('Inspirium\HumanResources\Models\Employee', 'threads_employees', 'thread_id', 'employee_id');
+		return $this->belongsToMany('Inspirium\Models\HumanResources\Employee', 'threads_employees', 'thread_id', 'employee_id');
 	}
 
 	public function triggerAssigned() {

@@ -10,7 +10,7 @@ class MessageObserver {
 	public function created(Message $message) {
 		foreach($message->thread->users as $user) {
 			if ($message->sender->id !== $user->id){
-				$user->user->notify(new NewMessage($message));
+				$user->notify(new NewMessage($message));
 			}
 		}
 	}

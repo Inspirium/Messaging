@@ -42,7 +42,7 @@ class Message extends Model {
 	protected $with = ['sender'];
 
 	public function sender() {
-		return $this->belongsTo('Inspirium\HumanResources\Models\Employee', 'sender_id');
+		return $this->belongsTo('Inspirium\Models\HumanResources\Employee', 'sender_id');
 	}
 
 	public function thread() {
